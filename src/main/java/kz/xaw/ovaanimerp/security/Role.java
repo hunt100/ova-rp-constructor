@@ -10,6 +10,9 @@ import javax.persistence.Table;
 @Table(name = "roles")
 public class Role extends BaseEntity {
 
+    public static final String ROLE_ADMIN = "ROLE_ADMIN";
+    public static final String ROLE_USER = "ROLE_USER";
+
     @Column(name = "name", length = 50)
     private String name;
 

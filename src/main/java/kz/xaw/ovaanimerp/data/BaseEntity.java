@@ -11,7 +11,7 @@ public abstract class BaseEntity {
     private Long id;
 
     @Column
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     public Long getId() {
         return id;

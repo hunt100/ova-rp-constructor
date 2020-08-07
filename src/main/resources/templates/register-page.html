@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="#{web.registration.title}">Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="alert alert-primary" role="alert" th:if="${success != null}">
+    <span th:utext="#{web.registration.success}">Регистрация успешно завершена, проверьте почту!</span>
+</div>
+<div class="container">
+<form action="/registration" th:object="${newUser}" method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1" th:utext="#{web.registration.email}">Email address</label>
+        <input th:errorclass="${#fields.hasErrors('login')} ? 'is-invalid'" th:field="*{login}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="invalid-feedback">
+            <span th:errors="*{login}">Please provide a valid data.</span>
+        </div>
+        <small id="emailHelp" class="form-text text-muted" th:utext="#{web.registration.no.share}">We'll never share your email with anyone else.</small>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" th:utext="#{web.registration.password}">Password</label>
+        <input th:errorclass="${#fields.hasErrors('password')}? 'is-invalid'" th:classappend="${#fields.hasGlobalErrors()} ? 'is-invalid'" th:field="*{password}" type="password" class="form-control" id="exampleInputPassword1">
+        <div class="invalid-feedback">
+            <span th:errors="*{password}">Please provide a valid data.</span>
+            <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">Please provide a valid data.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" th:utext="#{web.registration.password.confirm}">Password confirm</label>
+        <input th:classappend="${#fields.hasErrors('passwordConfirm')} ? 'is-invalid'" th:field="*{passwordConfirm}" type="password" th:class="form-control" id="exampleInputPassword2">
+        <div class="invalid-feedback">
+            <span th:errors="*{passwordConfirm}">Please provide a valid data.</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" th:utext="#{web.registration.submit}">Submit</button>
+</form>
+</div>
+</body>
+</html>
