@@ -1,4 +1,4 @@
-package kz.xaw.ovaanimerp.security;
+package kz.xaw.ovaanimerp.repository;
 
 import kz.xaw.ovaanimerp.repository.BaseRepository;
 import kz.xaw.ovaanimerp.security.AppUser;

@@ -6,12 +6,16 @@ import com.google.common.collect.Table;
 import java.util.Arrays;
 import java.util.List;
 
-public class MagicCostUtil {
+public final class MagicCostUtil {
 
-    private static Table<Integer, Integer, Integer> spellCost;
+    private static final Table<Integer, Integer, Integer> spellCost;
     private static final List<Integer> COSTS = Arrays.asList(60, 50, 40, 30, 20, 10, 5, 2, 0);
     private static int rowSize = Integer.MIN_VALUE;
     private static final int COL_SIZE = 5;
+
+    private MagicCostUtil() {
+        throw new IllegalStateException("Util class");
+    }
 
     static {
         spellCost = HashBasedTable.create();
@@ -35,5 +39,7 @@ public class MagicCostUtil {
         return spellCost;
     }
 
-
+    public static Integer getEnduranceCostForSpecificLevels(int row, int col) {
+        return spellCost.get(row, col);
+    }
 }

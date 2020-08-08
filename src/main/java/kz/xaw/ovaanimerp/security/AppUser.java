@@ -10,7 +10,6 @@ import java.util.Collection;
 @Table(name = "app_users")
 public class AppUser extends BaseEntity {
 
-    @Email(message = "Емэйло надо делать правильно")
     @Column
     private String login;
 
@@ -19,6 +18,9 @@ public class AppUser extends BaseEntity {
 
     @Column
     private Boolean enable;
+
+    @Column(name = "avatar_url", columnDefinition = "TEXT")
+    private String avatarUrl;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -50,6 +52,14 @@ public class AppUser extends BaseEntity {
 
     public void setEnable(Boolean enable) {
         this.enable = enable;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     public Collection<Role> getRoles() {
