@@ -2,6 +2,7 @@ package kz.xaw.ovaanimerp.service;
 
 import kz.xaw.ovaanimerp.data.Ability;
 import kz.xaw.ovaanimerp.repository.AbilityRepository;
+import kz.xaw.ovaanimerp.service.mapper.AbilityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -12,10 +13,12 @@ import java.util.Optional;
 public class AbilityService {
 
     private final AbilityRepository abilityRepository;
+    private final AbilityMapper abilityMapper;
 
     @Autowired
-    public AbilityService(AbilityRepository abilityRepository) {
+    public AbilityService(AbilityRepository abilityRepository, AbilityMapper abilityMapper) {
         this.abilityRepository = abilityRepository;
+        this.abilityMapper = abilityMapper;
     }
 
     @Transactional
@@ -39,7 +42,7 @@ public class AbilityService {
     }
 
     @Transactional
-    public Ability update(Ability ability) throws RuntimeException {
+    public Ability update(Long id,Ability ability) throws RuntimeException {
 
         Optional<Ability> abilityOptional = abilityRepository.findById(id);
 
