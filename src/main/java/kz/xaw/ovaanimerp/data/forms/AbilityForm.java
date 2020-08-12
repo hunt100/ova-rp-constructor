@@ -4,6 +4,7 @@ import java.util.List;
 
 
 public class AbilityForm extends BaseForm {
+
     @NotBlank(message = "{error.field.empty}")
     private String name;
     private Integer level;

@@ -9,6 +9,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring",
         uses = AbilityService.class,
         injectionStrategy = InjectionStrategy.CONSTRUCTOR)
+
 public interface AbilityMapper extends BaseMapper<Ability, AbilityForm> {
 
 }
