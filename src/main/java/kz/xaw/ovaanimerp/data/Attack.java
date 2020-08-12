@@ -1,7 +1,9 @@
 package kz.xaw.ovaanimerp.data;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "attacks")
@@ -9,7 +11,8 @@ public class Attack extends BaseEntity {
 
     private String name;
 
-    private String perksAndFlows;
+    @OneToMany
+    private List<Perk> perksAndFlaws;
 
     private String description;
 
@@ -30,12 +33,12 @@ public class Attack extends BaseEntity {
         this.name = name;
     }
 
-    public String getPerksAndFlows() {
-        return perksAndFlows;
+    public List<Perk> getPerksAndFlaws() {
+        return perksAndFlaws;
     }
 
-    public void setPerksAndFlows(String perksAndFlows) {
-        this.perksAndFlows = perksAndFlows;
+    public void setPerksAndFlaws(List<Perk> perksAndFlaws) {
+        this.perksAndFlaws = perksAndFlaws;
     }
 
     public String getDescription() {
