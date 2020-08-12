@@ -1,7 +1,6 @@
 package kz.xaw.ovaanimerp.data;
 
 import com.cloudinary.StoredFile;
-
 import javax.persistence.*;
 import java.util.Date;
 

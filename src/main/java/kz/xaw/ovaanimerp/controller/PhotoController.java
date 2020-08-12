@@ -8,7 +8,6 @@ import kz.xaw.ovaanimerp.annotation.constraint.PhotoUploadValidator;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import com.cloudinary.Singleton;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

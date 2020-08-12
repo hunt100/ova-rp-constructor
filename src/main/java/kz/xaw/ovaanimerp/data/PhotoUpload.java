@@ -1,5 +1,4 @@
 package kz.xaw.ovaanimerp.data;
-
 import com.cloudinary.Singleton;
 import com.cloudinary.StoredFile;
 import com.cloudinary.Transformation;
@@ -20,6 +19,7 @@ public class PhotoUpload extends StoredFile {
                     .generate(publicId);
         } else return null;
     }
+
 
     public String getThumbnailUrl() {
         if (version != null && format != null && publicId != null) {
