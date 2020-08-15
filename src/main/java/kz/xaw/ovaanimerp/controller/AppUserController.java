@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 public class AppUserController {
 
     static final String REGISTRATION_PATH = "/registration";
-    private static final String REGISTER_PAGE = "register-page";
+    private static final String REGISTER_PAGE = "registration-page";
 
     private final AppUserService appUserService;
     private final ApplicationEventPublisher eventPublisher;
