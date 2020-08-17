@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" th:href="@{/plugins/fontawesome-free/css/all.min.css}" href="../static/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet"th:href="@{/dist/css/adminlte.min.css}" href="../static/dist/css/adminlte.min.css">
+    <script src="https://kit.fontawesome.com/5572124dac.js" crossorigin="anonymous"></script>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+            <img src="../static/dist/img/AdminLTELogo.png" alt="logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">OVA RolePlay</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <img src="https://avatars.dicebear.com/api/bottts/uuevgmexmdhy.svg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="info">
+                    <a href="#" class="d-block">Hunt Huntovich</a>
+                </div>
+            </div>
+
+            <!-- SidebarSearch Form -->
+            <div class="form-inline">
+                <div class="input-group" data-widget="sidebar-search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2" style="height: 100%">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Main page
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-image"></i>
+                            <p>
+                                Create new hero
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-envelope"></i>
+                            <p>
+                                About game
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                About us
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon far fa-plus-square"></i>
+                            <p>
+                                Log out
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Profile</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <!-- Profile Image -->
+                        <div class="card card-primary card-outline">
+                            <div class="card-body box-profile">
+                                <div class="text-center">
+                                    <img class="profile-user-img img-fluid img-circle"
+                                         src="https://avatars.dicebear.com/api/bottts/uuevgmexmdhy.svg"
+                                         alt="User profile picture">
+                                </div>
+
+                                <h3 class="profile-username text-center">HunT Huntovich</h3>
+
+                                <p class="text-muted text-center">Role User</p>
+
+                                <ul class="list-group list-group-unbordered mb-3">
+                                    <li class="list-group-item">
+                                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                                        <p class="text-muted">
+                                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                                        <p class="text-muted">
+                                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                                        </p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong><i class="fas fa-book mr-1"></i> Education</strong>
+
+                                        <p class="text-muted">
+                                            B.S. in Computer Science from the University of Tennessee at Knoxville
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-header p-2">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Characters</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                                </ul>
+                            </div><!-- /.card-header -->
+
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class="active tab-pane" id="activity">
+                                        <!-- Post -->
+                                        <div class="post">
+                                            <div class="user-block">
+                                                <img class="img-circle img-bordered-sm" src="https://p7.hiclipart.com/preview/793/691/733/elsword-anime-character-manga-video-game-anime-boy.jpg" alt="user image">
+                                                <span class="username">
+                                                    <a href="#">Hero one</a>
+                                                    <a href="#" class="float-right btn-tool">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                </span>
+                                                <span class="description">Shared publicly - 7:30 PM today</span>
+                                            </div>
+                                            <!-- /.user-block -->
+                                            <p>
+                                                Lorem ipsum represents a long-held tradition for designers,
+                                                typographers and the like. Some people hate it and argue for
+                                                its demise, but others ignore the hate as they create awesome
+                                                tools to help create filler text for everyone from bacon lovers
+                                                to Charlie Sheen fans.
+                                            </p>
+
+                                            <p>
+                                                <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Check</a>
+                                                <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Edit</a>
+                                            </p>
+                                        </div>
+                                        <!-- /.post -->
+                                    </div>
+
+                                    <div class="tab-pane" id="settings">
+                                        <form class="form-horizontal">
+                                            <div class="form-group row">
+                                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                                                <div class="col-sm-10">
+                                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="offset-sm-2 col-sm-10">
+                                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                                    <button type="submit" class="btn btn-info">Change avatar</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-content -->
+                            </div><!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2020-2020 <a href="https://github.com">github.com</a>.</strong> All rights reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+</div>
+
+<!-- jQuery -->
+<script th:src="@{/plugins/jquery/jquery.min.js}" src="../static/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script th:src="/plugins/bootstrap/js/bootstrap.bundle.min.js" src="../static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script th:src="@{/dist/js/adminlte.min.js}" src="../static/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script th:src="@{/dist/js/demo.js}" src="../static/dist/js/demo.js"></script>
+</body>
+</html>
