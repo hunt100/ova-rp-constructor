@@ -8,5 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface AbilityRepository extends BaseRepository<Ability> {
-    Optional<Ability> findByName(Long abilityName);
 }

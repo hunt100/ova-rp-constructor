@@ -1,0 +1,2 @@
+INSERT INTO app_users (id, created_at, enable, login, password, avatar_url) VALUES (1, '2020-08-05 17:22:48', true, 'admin@admin.admin', '1', 'https://avatars.dicebear.com/api/bottts/admin.svg');
+INSERT INTO user_roles (user_id, role_id) VALUES (1, 1);

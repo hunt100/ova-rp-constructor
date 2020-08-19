@@ -6,5 +6,4 @@ import java.util.Optional;
 
 @Repository
 public interface CharAttributeRepository extends BaseRepository<CharsAttributeModifier>{
-    Optional<CharsAttributeModifier> findByName(Long charAttributeName);
 }
