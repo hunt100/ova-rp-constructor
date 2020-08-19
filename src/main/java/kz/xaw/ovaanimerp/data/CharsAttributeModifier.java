@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity(name = "chars_attributes_modifiers")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
-public abstract class CharsAttributeModifier extends BaseEntity {
+public class CharsAttributeModifier extends BaseEntity {
 
     @Column
     private Integer level;

@@ -7,5 +7,4 @@ import java.util.Optional;
 
 @Repository
 public interface WeaknessRepository extends BaseRepository<Weakness> {
-    Optional<Weakness>findByName(Long weaknessName);
 }

@@ -8,5 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface AttackRepository extends BaseRepository<Attack> {
-    Optional<Attack> findByName(Long attackName);
 }
