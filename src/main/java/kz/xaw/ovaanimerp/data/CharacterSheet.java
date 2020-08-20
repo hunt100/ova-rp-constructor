@@ -56,6 +56,9 @@ public class CharacterSheet extends BaseEntity {
     @ManyToOne
     private AppUser appUser;
 
+    @OneToOne
+    private Image image;
+
     public String getCharacterName() {
         return characterName;
     }
@@ -174,5 +177,13 @@ public class CharacterSheet extends BaseEntity {
 
     public void setBaseDice(Integer baseDice) {
         this.baseDice = baseDice;
+    }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
     }
 }

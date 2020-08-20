@@ -1,5 +1,6 @@
 package kz.xaw.ovaanimerp.service;
 
+import kz.xaw.ovaanimerp.data.Image;
 import kz.xaw.ovaanimerp.data.forms.AppUserForm;
 import kz.xaw.ovaanimerp.repository.AppUserRepository;
 import kz.xaw.ovaanimerp.security.AppUser;
@@ -41,7 +42,9 @@ public class AppUserService {
             throw new RuntimeException("Exception");
         }
         AppUser newUser = appUserMapper.formToEntity(form);
-        newUser.setAvatarUrl(getAvatar());
+        Image image = new Image();
+        image.setPlainUrl(getAvatar());
+        newUser.setImage(image);
         newUser.setEnable(false);
         newUser.setRoles(Collections.singleton(roleService.findByName(Role.ROLE_USER)));
         return appUserRepository.save(newUser);
@@ -72,5 +75,10 @@ public class AppUserService {
     @Transactional
     public void save(AppUser user) {
         appUserRepository.save(user);
+    }
+
+    @Transactional
+    public AppUser findUserByUsername(String username) {
+        return appUserRepository.findByLogin(username).orElseThrow();
     }
 }

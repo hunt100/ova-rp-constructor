@@ -1,9 +1,9 @@
 package kz.xaw.ovaanimerp.security;
 
 import kz.xaw.ovaanimerp.data.BaseEntity;
+import kz.xaw.ovaanimerp.data.Image;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.Collection;
 
 @Entity
@@ -19,8 +19,8 @@ public class AppUser extends BaseEntity {
     @Column
     private Boolean enable;
 
-    @Column(name = "avatar_url", columnDefinition = "TEXT")
-    private String avatarUrl;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Image image;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -54,12 +54,12 @@ public class AppUser extends BaseEntity {
         this.enable = enable;
     }
 
-    public String getAvatarUrl() {
-        return avatarUrl;
+    public Image getImage() {
+        return image;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
+    public void setImage(Image image) {
+        this.image = image;
     }
 
     public Collection<Role> getRoles() {
