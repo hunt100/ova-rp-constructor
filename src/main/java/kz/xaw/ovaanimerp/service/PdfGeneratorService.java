@@ -53,18 +53,6 @@ public class PdfGeneratorService {
     private byte[] constructPdfFile(String renderedDocument) {
         try(ByteArrayOutputStream outputStream = new ByteArrayOutputStream();) {
             ITextRenderer renderer = new ITextRenderer();
-//        renderer.getFontResolver().addFont("Code39.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            // FlyingSaucer has a working directory. If you run this test, the working directory
-            // will be the root folder of your project. However, all files (HTML, CSS, etc.) are
-            // located under "/src/test/resources". So we want to use this folder as the working
-            // directory.
-//            String baseUrl = FileSystems
-//                    .getDefault()
-//                    .getPath("src", "test", "resources")
-//                    .toUri()
-//                    .toURL()
-//                    .toString();
-//        renderer.setDocumentFromString(xHtml, baseUrl);
             renderer.setDocumentFromString(renderedDocument);
             renderer.layout();
             renderer.createPDF(outputStream);
